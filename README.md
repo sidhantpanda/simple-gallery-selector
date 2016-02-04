@@ -15,7 +15,7 @@ btnTest.setOnClickListener(new View.OnClickListener() {
 
 #### Step 2
 Catch the result:
-```
+```java
 @Override
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
   super.onActivityResult(requestCode, resultCode, data);
