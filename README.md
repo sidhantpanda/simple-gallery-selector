@@ -1,6 +1,17 @@
 # Simple Gallery Selector
 A very simple gallery selector in development
 
+#### Step 0
+Download the library [from here](https://github.com/sidhantpanda/demo-android-app/raw/master/app/libs/simple-gallery-selector.aar). Add it to your libs folder.
+
+Please add these dependencies as well
+```java
+compile 'com.github.manuelpeinado.multichoiceadapter:multichoiceadapter:3.0.0'
+compile 'com.github.bumptech.glide:glide:3.7.0'
+compile 'com.android.support:support-v4:23.1.1'
+compile 'com.pnikosis:materialish-progress:1.7'
+```
+
 #### Step 1
 Invoke Gallery Selector:
 ```java
@@ -30,5 +41,8 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
   }
 }
 ```
+
+##### Example
+See [Demo App Implementation](https://github.com/sidhantpanda/demo-android-app/blob/master/app/src/main/java/com/hashexclude/testapp/MainActivity.java)
 
 Reach me at sidhantpanda@hashexclude.com
