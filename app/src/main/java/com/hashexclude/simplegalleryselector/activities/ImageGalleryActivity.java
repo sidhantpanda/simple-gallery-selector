@@ -2,6 +2,7 @@ package com.hashexclude.simplegalleryselector.activities;
 
 import android.app.Activity;
 import android.app.LoaderManager;
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
@@ -114,15 +115,19 @@ public class ImageGalleryActivity extends Activity implements LoaderManager.Load
         mAdapter.setImageGalleryAdapterResponse(new ImageGalleryAdapter.ImageGalleryAdapterResponse() {
             @Override
             public void tickClicked(ArrayList<PhotoItem> returnDetails) {
-                Uri[] selectedUris = new Uri[returnDetails.size()];
-                int i = 0;
-                for(PhotoItem item: returnDetails) {
-                    selectedUris[i] = returnDetails.get(i).getImageUri();
-                    i++;
+
+                ClipData clip = null;
+                for (PhotoItem item : returnDetails) {
+                    if (clip == null) {
+                        clip = new ClipData("Paths", new String[]{},
+                                new ClipData.Item(item.getImageUri()));
+                    } else {
+                        clip.addItem(new ClipData.Item(item.getImageUri()));
+                    }
                 }
 
                 Intent returnIntent = new Intent();
-                returnIntent.putExtra("selectedImages", selectedUris);
+                returnIntent.setClipData(clip);
                 setResult(RESULT_OK, returnIntent);
                 finish();
             }
