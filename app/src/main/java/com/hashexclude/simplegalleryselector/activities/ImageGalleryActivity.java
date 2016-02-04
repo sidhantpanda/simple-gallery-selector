@@ -1,12 +1,17 @@
 package com.hashexclude.simplegalleryselector.activities;
 
+import android.app.Activity;
 import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.net.Uri;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatCallback;
+import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -32,7 +37,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImageGalleryActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<PhotoItem>> {
+public class ImageGalleryActivity extends Activity implements LoaderManager.LoaderCallbacks<List<PhotoItem>> {
 
     private static final String TAG = "ImageGalleryActivity";
 
@@ -61,12 +66,6 @@ public class ImageGalleryActivity extends AppCompatActivity implements LoaderMan
         layoutImageList    = (GridView) findViewById(R.id.gridView);
         layoutImageDetails = (RelativeLayout) findViewById(R.id.container_image_details);
         imgPosterPreview   = (ImageView) findViewById(R.id.img_details_preview);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(false);
-        setTitle("Gallery");
 
         mListView = (AbsListView) findViewById(R.id.gridView);
         mPhotoListItem = new ArrayList<>() ;
