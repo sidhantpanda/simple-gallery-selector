@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SimpleGallerySelector</string>
+    <string name="content_description_image_gallery_thumbnail">Gallery Thumbnail</string>
+</resources>
