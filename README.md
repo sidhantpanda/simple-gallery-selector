@@ -1,8 +1,8 @@
 # Simple Gallery Selector
-A very simple gallery selector in development
+A very simple gallery selector in development. Uses new Marshmallow permissions
 
 #### Step 0
-Download the library [from here](https://github.com/sidhantpanda/demo-android-app/raw/master/app/libs/simple-gallery-selector.aar). Add it to your libs folder.
+Download the library [from here](https://github.com/sidhantpanda/simple-gallery-selector/raw/master/simple-gallery-selector.aar). Add it to your libs folder.
 
 Please add these dependencies as well
 ```java
